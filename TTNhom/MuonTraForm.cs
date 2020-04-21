@@ -29,7 +29,7 @@ namespace TTNhom
             InitializeComponent();
             addComboBox(conn, cmd, list, "MaDocGia", "DocGia", comboBoxDocGia);
             addComboBox(conn, cmd, listMaSach, "MaSach", "DauSach", comboBoxMaSach);
-            //comboBoxNV.Text = FormLogin.MaNV.ToString();
+            comboBoxNV.Text = FormLogin.MaNV.ToString();
             dateTimePickerMuon.Format = DateTimePickerFormat.Custom;
             dateTimePickerMuon.CustomFormat = "dd-MM-yyyy";
             dateTimePickerTra.Format = DateTimePickerFormat.Custom;
@@ -59,7 +59,6 @@ namespace TTNhom
             NgayTra = dateTimePickerTra.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
             SoLuong = Convert.ToInt32(numericUpDownSoLuong.Value);
             Note = textBoxNote.Text;
-
 
             conn.Open();
             table = new DataTable();
