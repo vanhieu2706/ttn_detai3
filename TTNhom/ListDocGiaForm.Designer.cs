@@ -331,7 +331,6 @@
             this.Name = "ListDocGiaForm";
             this.Text = "ListDocGia";
             this.Load += new System.EventHandler(this.PicSearch_Click);
-            this.Click += new System.EventHandler(this.PicSearch_Click);
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
