@@ -62,14 +62,13 @@
             this.comboBoxColumn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBoxColumn.FormattingEnabled = true;
             this.comboBoxColumn.Items.AddRange(new object[] {
-            "Mã Học Sinh",
-            "Tên Học Sinh",
-            "Giới Tính",
-            "Ngày Sinh",
+            "Mã Nhân Viên",
+            "Tên Nhân Viên",
             "Địa Chỉ",
-            "SĐT Phụ Huynh",
-            "Email Phụ Huynh",
-            "Mã Lớp"});
+            "Ngày Sinh",
+            "Giới Tính",
+            "SĐT",
+            "Ngày Vào Làm"});
             this.comboBoxColumn.Location = new System.Drawing.Point(437, 62);
             this.comboBoxColumn.Name = "comboBoxColumn";
             this.comboBoxColumn.Size = new System.Drawing.Size(131, 25);
@@ -147,6 +146,7 @@
             this.btnXoa.TabIndex = 99;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
             // 
             // btnSua
             // 
@@ -161,6 +161,7 @@
             this.btnSua.TabIndex = 97;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.BtnSua_Click);
             // 
             // panel1
             // 
@@ -231,6 +232,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(565, 167);
             this.dataGridView1.TabIndex = 92;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // labelTimKiem
             // 
@@ -258,6 +260,7 @@
             this.txtKeySearch.Name = "txtKeySearch";
             this.txtKeySearch.Size = new System.Drawing.Size(149, 23);
             this.txtKeySearch.TabIndex = 89;
+            this.txtKeySearch.TextChanged += new System.EventHandler(this.TxtKeySearch_TextChanged);
             // 
             // label3
             // 
