@@ -269,10 +269,11 @@
             // dtpHSD
             // 
             this.dtpHSD.Location = new System.Drawing.Point(607, 562);
-            this.dtpHSD.MinDate = new System.DateTime(2020, 4, 21, 0, 0, 0, 0);
+            this.dtpHSD.MinDate = new System.DateTime(1997, 12, 31, 0, 0, 0, 0);
             this.dtpHSD.Name = "dtpHSD";
             this.dtpHSD.Size = new System.Drawing.Size(235, 22);
             this.dtpHSD.TabIndex = 135;
+            this.dtpHSD.Value = new System.DateTime(2020, 4, 21, 21, 4, 33, 0);
             // 
             // btnSua
             // 
