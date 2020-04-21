@@ -11,7 +11,7 @@ namespace TTNhom
 {
     class DBAccess
     {
-        public static string connString = "Data Source=DESKTOP-QOH72DR\\VANHIEU;Initial Catalog=TTN_QL_ThuVien;Integrated Security=True";
+        public static string connString = "Data Source=DESKTOP-0GHR3KF\\SQLEXPRESS;Initial Catalog=TTN_QL_ThuVien;Integrated Security=True";
         public static SqlConnection connect = new SqlConnection();
         private static SqlDataAdapter adt = new SqlDataAdapter();
         private static SqlCommand cmd = new SqlCommand();
