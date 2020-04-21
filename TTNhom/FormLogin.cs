@@ -21,6 +21,7 @@ namespace TTNhom
         public static string ten;
         public static string quyen;
         public static string TaiKhoan;
+        public static int MaNV;
 
 
         public FormLogin()
@@ -49,6 +50,7 @@ namespace TTNhom
 
                 ten = table.Rows[0][2].ToString();
                 quyen = table.Rows[0][3].ToString();
+                MaNV = Convert.ToInt32(table.Rows[0][1]);
 
                 MainForm main = new MainForm();
                 main.Show();

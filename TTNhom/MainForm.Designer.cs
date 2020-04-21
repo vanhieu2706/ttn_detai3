@@ -262,7 +262,7 @@
             this.btnNhuCau.Name = "btnNhuCau";
             this.btnNhuCau.Size = new System.Drawing.Size(200, 46);
             this.btnNhuCau.TabIndex = 3;
-            this.btnNhuCau.Text = "NHU CẦU";
+            this.btnNhuCau.Text = "MƯỢN TRẢ SÁCH";
             this.btnNhuCau.UseVisualStyleBackColor = false;
             this.btnNhuCau.Click += new System.EventHandler(this.btnNhuCau_Click);
             // 
@@ -274,7 +274,7 @@
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(200, 47);
             this.btnTraSach.TabIndex = 2;
-            this.btnTraSach.Text = "Trả sách";
+            this.btnTraSach.Text = "Danh sách";
             this.btnTraSach.UseVisualStyleBackColor = true;
             this.btnTraSach.Click += new System.EventHandler(this.btnTraSach_Click);
             // 
@@ -295,7 +295,7 @@
             this.btnMuonSach.Name = "btnMuonSach";
             this.btnMuonSach.Size = new System.Drawing.Size(200, 49);
             this.btnMuonSach.TabIndex = 1;
-            this.btnMuonSach.Text = "Mượn sách";
+            this.btnMuonSach.Text = "Thêm mượn sách";
             this.btnMuonSach.UseVisualStyleBackColor = true;
             this.btnMuonSach.Click += new System.EventHandler(this.btnMuonSach_Click);
             // 
