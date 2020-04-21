@@ -38,7 +38,7 @@ namespace TTNhom
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             TaiKhoan = txtUser.Text;
-            string query = "SELECT * FROM dbo.TaiKhoan WHERE TaiKhoan = '" + txtUser.Text + "' AND MatKhau = '" + txtPass.Text + "' ";
+            string query = "SELECT * FROM dbo.NhanVien WHERE TaiKhoan = '" + txtUser.Text + "' AND MatKhau = '" + txtPass.Text + "' ";
             dbAccess.readDataToAdapter(query, dt);
             int a = dt.Rows.Count;
             if (a != 0)
@@ -48,10 +48,10 @@ namespace TTNhom
                 DataTable table = new DataTable();
                 adt.Fill(table);
 
-                ten = table.Rows[0][2].ToString();
-                quyen = table.Rows[0][3].ToString();
-                MaNV = Convert.ToInt32(table.Rows[0][1]);
-
+                ten = table.Rows[0][1].ToString();
+                quyen = table.Rows[0][9].ToString();
+                MaNV = Convert.ToInt32(table.Rows[0][0]);
+                
                 MainForm main = new MainForm();
                 main.Show();
             }
