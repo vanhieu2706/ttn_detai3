@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>- Phần mềm Quản lý thư viện dùng để quản lý sách, tài liệu lưu trữ trong thự viện, 
+tra cứu tìm kiếm các tài liệu trong thư viện, Quản lý đọc giả và các lần mượn trả sách,
+Quản lý thông tin nhân viên trực tiếp quản lý , thực hiện các công việc trong Thư viện.
+
+
+</value>
+  </data>
 </root>
