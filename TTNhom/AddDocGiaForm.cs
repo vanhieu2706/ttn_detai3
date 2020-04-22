@@ -21,6 +21,9 @@ namespace TTNhom
 
         DBAccess access = new DBAccess();
         DataTable table;
+
+        
+
         List<string> list = new List<string>();
         public AddDocGiaForm()
         {
@@ -64,7 +67,7 @@ namespace TTNhom
                     int i = cmd.ExecuteNonQuery();
                     if (i != 0)
                     {
-                        MessageBox.Show("Them Độc Giả Thanh Cong");
+                        MessageBox.Show("Them Độc Giả Thành Công");
                         conn.Close();
                     }
                 }
