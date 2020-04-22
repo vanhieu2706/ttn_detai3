@@ -47,28 +47,34 @@ namespace TTNhom
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            MaDocGia = Convert.ToInt32(comboBoxDocGia.Text);
-            MaSach = Convert.ToInt32(comboBoxMaSach.Text);
-            MaNV = Convert.ToInt32(comboBoxNV.Text);
-            NgayMuon = dateTimePickerMuon.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
-            NgayTra = dateTimePickerTra.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
-            SoLuong = Convert.ToInt32(numericUpDownSoLuong.Value);
-            Note = textBoxNote.Text;
-
-            conn.Open();
-            table = new DataTable();
-            string queryUpdate = ("UPDATE NhuCauMuonTra SET MaDocGia = " + MaDocGia + ", MaNV = " + MaNV + ", NgayMuon = '" + NgayMuon + "'," +
-                    "NgayTra = '" + NgayTra + "', MaSach = " + MaSach + ", SoLuong = " + SoLuong + ", GhiChu = N'" + Note + "' where MaPhieuMuon = " + int.Parse(id) + " ");
-            cmd = new SqlCommand(queryUpdate, conn);
-            cmd.CommandType = CommandType.Text;
-            int i = cmd.ExecuteNonQuery();
-            if (i != 0)
+            if (id != null)
             {
-                MessageBox.Show("Sửa thành công");
-                conn.Close();
+                MaDocGia = Convert.ToInt32(comboBoxDocGia.Text);
+                MaSach = Convert.ToInt32(comboBoxMaSach.Text);
+                MaNV = Convert.ToInt32(comboBoxNV.Text);
+                NgayMuon = dateTimePickerMuon.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
+                NgayTra = dateTimePickerTra.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
+                SoLuong = Convert.ToInt32(numericUpDownSoLuong.Value);
+                Note = textBoxNote.Text;
+
+                conn.Open();
+                table = new DataTable();
+                string queryUpdate = ("UPDATE NhuCauMuonTra SET MaDocGia = " + MaDocGia + ", MaNV = " + MaNV + ", NgayMuon = '" + NgayMuon + "'," +
+                        "NgayTra = '" + NgayTra + "', MaSach = " + MaSach + ", SoLuong = " + SoLuong + ", GhiChu = N'" + Note + "' where MaPhieuMuon = " + int.Parse(id) + " ");
+                cmd = new SqlCommand(queryUpdate, conn);
+                cmd.CommandType = CommandType.Text;
+                int i = cmd.ExecuteNonQuery();
+                if (i != 0)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    conn.Close();
+                }
+                addData();
+                clear();
+            } else
+            {
+                MessageBox.Show("Xin mời chọn phiếu mượn cần sửa !!");
             }
-            addData();
-            clear();
         }
 
         private void txtKeySearch_TextChanged(object sender, EventArgs e)
@@ -161,6 +167,23 @@ namespace TTNhom
             
         }
 
+        private void buttonTraSach_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            table = new DataTable();
+            string queryUpdate = ("UPDATE NhuCauMuonTra SET DaTra = 1 where MaPhieuMuon = " + int.Parse(id) + " ");
+            cmd = new SqlCommand(queryUpdate, conn);
+            cmd.CommandType = CommandType.Text;
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+            {
+                MessageBox.Show("Sửa thành công");
+                conn.Close();
+            }
+            addData();
+            clear();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             clear();
@@ -174,6 +197,15 @@ namespace TTNhom
             dateTimePickerTra.Value = Convert.ToDateTime(selectRow.Cells[5].Value.ToString());
             numericUpDownSoLuong.Value = Convert.ToDecimal(selectRow.Cells[6].Value);
             textBoxNote.Text = selectRow.Cells[7].Value.ToString().Trim();
+            bool DaTra = Convert.ToBoolean(selectRow.Cells[8].Value.ToString().Trim());
+            if(DaTra == true)
+            {
+                buttonTraSach.Enabled = false;
+            } else
+            {
+                buttonTraSach.Enabled = true;
+            }
+
         }
 
         private void addComboBox(SqlConnection conn, SqlCommand cmd, List<string> list, string tenCot, string tenTable, ComboBox cb)
@@ -227,7 +259,7 @@ namespace TTNhom
             }
             else
             {
-                MessageBox.Show("Xin mời chọn nhân viên cần xóa !!");
+                MessageBox.Show("Xin mời chọn phiếu mượn cần xóa !!");
             }
         }
     }

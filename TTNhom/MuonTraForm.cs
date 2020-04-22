@@ -59,11 +59,14 @@ namespace TTNhom
             NgayTra = dateTimePickerTra.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
             SoLuong = Convert.ToInt32(numericUpDownSoLuong.Value);
             Note = textBoxNote.Text;
+            Note = textBoxNote.Text;
+            Note = textBoxNote.Text;
+            Note = textBoxNote.Text;
 
             conn.Open();
             table = new DataTable();
-            string queryInsert = "INSERT dbo.NhuCauMuonTra( MaDocGia ,MaNV ,NgayMuon ,MaSach ,NgayTra ,SoLuong ,GhiChu)VALUES" +
-                "  ( '" + MaDocGia + "' ,'" + MaNV + "' ,'" + NgayMuon + "' ,'" + MaSach + "' , '" + NgayTra + "' , '" + SoLuong + "' , N'" + Note + "'  )";
+            string queryInsert = "INSERT dbo.NhuCauMuonTra( MaDocGia ,MaNV ,NgayMuon ,MaSach ,NgayTra ,SoLuong ,GhiChu ,DaTra)VALUES" +
+                "  ( '" + MaDocGia + "' ,'" + MaNV + "' ,'" + NgayMuon + "' ,'" + MaSach + "' , '" + NgayTra + "' , '" + SoLuong + "' , N'" + Note + "', 0  )";
             cmd = new SqlCommand(queryInsert, conn);
             cmd.CommandType = CommandType.Text;
             int i = cmd.ExecuteNonQuery();

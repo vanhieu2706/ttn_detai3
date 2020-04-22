@@ -49,6 +49,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.buttonTraSach = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -222,7 +223,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(362, 532);
+            this.btnXoa.Location = new System.Drawing.Point(421, 533);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(103, 41);
             this.btnXoa.TabIndex = 113;
@@ -237,7 +238,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(232, 532);
+            this.btnSua.Location = new System.Drawing.Point(291, 533);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(103, 41);
             this.btnSua.TabIndex = 112;
@@ -255,11 +256,28 @@
             this.dateTimePicker2.TabIndex = 115;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
+            // buttonTraSach
+            // 
+            this.buttonTraSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(186)))), ((int)(((byte)(151)))));
+            this.buttonTraSach.Enabled = false;
+            this.buttonTraSach.FlatAppearance.BorderSize = 0;
+            this.buttonTraSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTraSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTraSach.ForeColor = System.Drawing.Color.White;
+            this.buttonTraSach.Location = new System.Drawing.Point(163, 533);
+            this.buttonTraSach.Name = "buttonTraSach";
+            this.buttonTraSach.Size = new System.Drawing.Size(103, 41);
+            this.buttonTraSach.TabIndex = 116;
+            this.buttonTraSach.Text = "Đã Trả";
+            this.buttonTraSach.UseVisualStyleBackColor = false;
+            this.buttonTraSach.Click += new System.EventHandler(this.buttonTraSach_Click);
+            // 
             // ListMuonTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 603);
+            this.Controls.Add(this.buttonTraSach);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
@@ -313,5 +331,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button buttonTraSach;
     }
 }
