@@ -19,7 +19,7 @@ namespace TTNhom
         DBAccess access = new DBAccess();
         DataTable table;
         List<string> list = new List<string>();
-        string ten, diaChi, ngaySinh, gioiTinh, sdt, ngayVaoLam;
+        string ten, diaChi, ngaySinh, gioiTinh, sdt, ngayVaoLam, taikhoan, matkhau, phanquyen;
         public static int maNV = -1;
         public ListNhanVienForm()
         {
@@ -31,7 +31,7 @@ namespace TTNhom
         {
             if (maNV == -1)
             {
-                MessageBox.Show("Chua Chon hoc sinh de XOA");
+                MessageBox.Show("Chưa chọn Nhân Viên để XÓA");
             }
             else
             {
@@ -55,6 +55,9 @@ namespace TTNhom
             diaChi = txtDiaChi.Text;
             sdt = txtPhone.Text.Trim();
             ngayVaoLam = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
+            taikhoan = txtTaiKhoan.Text;
+            matkhau = txtMatKhau.Text;
+            phanquyen = txtPhanQuyen.Text;
 
             if (radioButtonNam.Checked == true)
             {
@@ -65,7 +68,7 @@ namespace TTNhom
                 gioiTinh = "0";
             }
 
-            if (ten.Equals("") || ngaySinh.Equals("") || diaChi.Equals("") || sdt.Equals("") || gioiTinh.Equals(""))
+            if (ten.Equals("") || ngaySinh.Equals("") || diaChi.Equals("") || sdt.Equals("") || gioiTinh.Equals("") || taikhoan.Equals("") || matkhau.Equals("") || phanquyen.Equals(""))
             {
                 MessageBox.Show("Thieu Thong tin");
 
@@ -73,12 +76,14 @@ namespace TTNhom
             else
             {
                 string query = "UPDATE dbo.NhanVien SET  HoTenNV = N'"+ten+"',DiaChiNV = N'"+diaChi+"',NgaySinh = N'"+ngaySinh+"'" +
-                    ",Sex = '"+gioiTinh+"',SDT= '"+sdt+"', NgayVaoLam = '"+ngayVaoLam+"' WHERE MaNV = '"+maNV+"' ";
+                    ",Sex = '"+gioiTinh+"',SDT= '"+sdt+"', NgayVaoLam = '"+ngayVaoLam+ "' , TaiKhoan = '" + taikhoan + "' ,MatKhau = '" + matkhau + "', PhanQuyen = '" + phanquyen + "' WHERE MaNV = '" + maNV+"' ";
                 GetData(query, dataGridView1, table);
                 GetData("select * from NhanVien", dataGridView1, table);
                 MessageBox.Show("Done");
             }
         }
+
+      
 
         private void addComboBox(SqlConnection conn, SqlCommand cmd, List<string> list, string tenCot, string tenTable, ComboBox cb)
         {
@@ -168,14 +173,15 @@ namespace TTNhom
                 DataGridViewRow selectRow = dataGridView1.Rows[index];
 
                 maNV = int.Parse(selectRow.Cells[0].Value.ToString());
-                
                 ten = selectRow.Cells[1].Value.ToString();
-
                 diaChi = selectRow.Cells[2].Value.ToString();
                 ngaySinh = selectRow.Cells[3].Value.ToString();
                 gioiTinh = selectRow.Cells[4].Value.ToString();
                 sdt = selectRow.Cells[5].Value.ToString();
                 ngayVaoLam = selectRow.Cells[6].Value.ToString();
+                taikhoan = selectRow.Cells[7].Value.ToString();
+                matkhau = selectRow.Cells[8].Value.ToString();
+                phanquyen = selectRow.Cells[9].Value.ToString();
 
 
 
@@ -185,6 +191,10 @@ namespace TTNhom
 
                 dateTimePicker1.Value = Convert.ToDateTime(ngaySinh);
                 dateTimePicker2.Value = Convert.ToDateTime(ngayVaoLam);
+
+                txtTaiKhoan.Text = taikhoan;
+                txtMatKhau.Text = matkhau;
+                txtPhanQuyen.Text = phanquyen;
 
                 if (gioiTinh.Equals("True")) radioButtonNam.Checked = true;
                 else radioButtonNu.Checked = true;

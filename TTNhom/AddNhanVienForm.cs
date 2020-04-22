@@ -18,10 +18,14 @@ namespace TTNhom
         private static SqlCommand cmd = new SqlCommand();
         DBAccess access = new DBAccess();
         DataTable table;
-        string ten, diaChi, ngaySinh, gioiTinh, sdt, ngayVaoLam;
+        string ten, diaChi, ngaySinh, gioiTinh, sdt, ngayVaoLam, taikhoan, matkhau, phanquyen;
         public AddNhanVienForm()
         {
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "yyyy-MM-dd";
         }
 
         private void BtnThem_Click(object sender, EventArgs e)
@@ -31,6 +35,9 @@ namespace TTNhom
             diaChi = txtDiaChi.Text;
             sdt = txtPhone.Text;
             ngayVaoLam = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
+            taikhoan = txtTaiKhoan.Text;
+            matkhau = txtMatKhau.Text;
+            phanquyen = txtPhanQuyen.Text;
 
             if (radioButtonNam.Checked == true)
             {
@@ -40,32 +47,25 @@ namespace TTNhom
             {
                 gioiTinh = "0";
             }
-            try
-            {
-                if (ten.Equals("") || ngaySinh.Equals("") || diaChi.Equals("") || sdt.Equals("") || gioiTinh.Equals(""))
-                {
-                    MessageBox.Show("Thieu Thong tin");
 
-                }
-                else
-                {
-                    conn.Open();
-                    table = new DataTable();
-                    string queryInsert = "INSERT dbo.NhanVien( HoTenNV ,DiaChiNV ,NgaySinh ,Sex ,SDT ,NgayVaoLam) VALUES" +
-                        " ( N'"+ten+"' , N'"+diaChi+"' , '"+ngaySinh+"' , '"+gioiTinh+"' , '"+sdt+"' , '"+ngayVaoLam+"' )";
-                    cmd = new SqlCommand(queryInsert, conn);
-                    cmd.CommandType = CommandType.Text;
-                    int i = cmd.ExecuteNonQuery();
-                    if (i != 0)
-                    {
-                        MessageBox.Show("Them Hoc Sinh Thanh Cong");
-                        conn.Close();
-                    }
-                }
-            }
-            catch
+            if (ten.Equals("") || ngaySinh.Equals("") || diaChi.Equals("") || sdt.Equals("") || gioiTinh.Equals("") || ngayVaoLam.Equals("") || taikhoan.Equals("") || matkhau.Equals("") || phanquyen.Equals(""))
             {
-                MessageBox.Show("Sai Định Dạng Ngày Tháng");
+                MessageBox.Show("Thiếu Thông Tin");
+            }
+            else
+            {
+                conn.Open();
+                table = new DataTable();
+                string queryInsert = "INSERT dbo.NhanVien( HoTenNV ,DiaChiNV ,NgaySinh ,Sex ,SDT ,NgayVaoLam, TaiKhoan, MatKhau, PhanQuyen) VALUES" +
+                    " ( N'"+ten+"' , N'"+diaChi+"' , '"+ngaySinh+"' , '"+gioiTinh+"' , '"+sdt+"' , '"+ngayVaoLam+ "', '" + taikhoan + "' , '" + matkhau + "' , '" + phanquyen + "' )";
+                cmd = new SqlCommand(queryInsert, conn);
+                cmd.CommandType = CommandType.Text;
+                int i = cmd.ExecuteNonQuery();
+                if (i != 0)
+                {
+                    MessageBox.Show("Thêm Nhân Viên Thành Công");
+                    conn.Close();
+                }
             }
         }
     }
