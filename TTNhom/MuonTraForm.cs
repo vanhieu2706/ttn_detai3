@@ -65,9 +65,6 @@ namespace TTNhom
             NgayTra = dateTimePickerTra.Value.Date.ToString("yyyy-MM-dd HH:mm:ss");
             SoLuong = Convert.ToInt32(numericUpDownSoLuong.Value);
             Note = textBoxNote.Text;
-            Note = textBoxNote.Text;
-            Note = textBoxNote.Text;
-            Note = textBoxNote.Text;
 
             conn.Open();
             table = new DataTable();
