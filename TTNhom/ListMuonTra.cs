@@ -184,6 +184,8 @@ namespace TTNhom
             clear();
         }
 
+       
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             clear();

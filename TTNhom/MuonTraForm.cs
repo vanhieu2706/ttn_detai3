@@ -21,6 +21,12 @@ namespace TTNhom
         private static SqlCommand cmd = new SqlCommand();
         DBAccess access = new DBAccess();
         DataTable table;
+
+        private void MuonTraForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         List<string> list = new List<string>();
         List<string> listMaSach = new List<string>();
 
