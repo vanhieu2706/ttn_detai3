@@ -51,26 +51,25 @@ namespace TTNhom
                 gioiTinh = 0;
             }
 
-                if (ten.Equals("") || ngaySinh.Equals("") || diaChi.Equals("") || sdt.Equals("") || gioiTinh.Equals("") || hanSD.Equals(""))
+            if (ten.Equals("") || ngaySinh.Equals("") || diaChi.Equals("") || sdt.Equals("") || gioiTinh.Equals("") || hanSD.Equals(""))
+            {
+                MessageBox.Show("Thieu Thong tin");
+            }
+            else
+            {
+                conn.Open();
+                table = new DataTable();
+                string queryInsert = "INSERT dbo.DocGia( TenDocGia ,DiaChi ,NgaySinh ,Sex ,HanSuDung ,SDT)" +
+                    "VALUES  ( N'" + ten + "' ,N'" + diaChi + "' ,'" + ngaySinh + "' ," + gioiTinh + " ,'" + hanSD + "' ,'" + sdt + "')";
+                cmd = new SqlCommand(queryInsert, conn);
+                cmd.CommandType = CommandType.Text;
+                int i = cmd.ExecuteNonQuery();
+                if (i != 0)
                 {
-                    MessageBox.Show("Thieu Thong tin");
-
+                    MessageBox.Show("Them Độc Giả Thành Công");
+                    conn.Close();
                 }
-                else
-                {
-                    conn.Open();
-                    table = new DataTable();
-                    string queryInsert = "INSERT dbo.DocGia( TenDocGia ,DiaChi ,NgaySinh ,Sex ,HanSuDung ,SDT)" +
-                        "VALUES  ( N'" + ten + "' ,N'" + diaChi + "' ,'" + ngaySinh + "' ," + gioiTinh + " ,'" + hanSD + "' ,'" + sdt + "')";
-                    cmd = new SqlCommand(queryInsert, conn);
-                    cmd.CommandType = CommandType.Text;
-                    int i = cmd.ExecuteNonQuery();
-                    if (i != 0)
-                    {
-                        MessageBox.Show("Them Độc Giả Thành Công");
-                        conn.Close();
-                    }
-                }
+            }
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)

@@ -177,10 +177,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(67, 30);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 24);
+            this.label9.Size = new System.Drawing.Size(133, 26);
             this.label9.TabIndex = 135;
             this.label9.Text = "Thêm Độc Giả";
             // 

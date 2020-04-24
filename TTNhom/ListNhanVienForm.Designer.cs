@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListNhanVienForm));
             this.comboBoxColumn = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.picSearch = new System.Windows.Forms.PictureBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -57,9 +56,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            this.picSearch = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxColumn
@@ -88,16 +90,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(167, 22);
             this.dateTimePicker1.TabIndex = 110;
-            // 
-            // picSearch
-            // 
-            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
-            this.picSearch.Location = new System.Drawing.Point(572, 55);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(46, 41);
-            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSearch.TabIndex = 109;
-            this.picSearch.TabStop = false;
             // 
             // txtPhone
             // 
@@ -351,11 +343,43 @@
             this.label5.TabIndex = 130;
             this.label5.Text = "Tài Khoản";
             // 
+            // picSearch
+            // 
+            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
+            this.picSearch.Location = new System.Drawing.Point(572, 55);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(46, 41);
+            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSearch.TabIndex = 109;
+            this.picSearch.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(50, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(568, 17);
+            this.label12.TabIndex = 163;
+            this.label12.Text = "______________________________________________________________________";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(192, 26);
+            this.label9.TabIndex = 162;
+            this.label9.Text = "Danh sách Nhân viên";
+            // 
             // ListNhanVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 532);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtPhanQuyen);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMatKhau);
@@ -386,10 +410,10 @@
             this.Name = "ListNhanVienForm";
             this.Text = "ListNhanVien";
             this.Load += new System.EventHandler(this.ListNhanVienForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +449,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
     }
 }
