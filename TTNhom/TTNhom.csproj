@@ -195,5 +195,18 @@
   <ItemGroup>
     <None Include="Resources\hvktqs.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\a1.PNG" />
+    <Content Include="Resources\a10.PNG" />
+    <Content Include="Resources\a12.PNG" />
+    <Content Include="Resources\a2.PNG" />
+    <Content Include="Resources\a3.PNG" />
+    <Content Include="Resources\a4.PNG" />
+    <Content Include="Resources\a5.PNG" />
+    <Content Include="Resources\a6.PNG" />
+    <Content Include="Resources\a7.PNG" />
+    <Content Include="Resources\a8.PNG" />
+    <Content Include="Resources\a9.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

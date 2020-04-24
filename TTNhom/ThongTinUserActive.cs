@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace TTNhom
 {
     public partial class ThongTinUserActive : Form
     {
+        
+
         private void init()
         {
             txtTen.Text = FormLogin.ten;
@@ -19,6 +22,7 @@ namespace TTNhom
             {
                 txtTen.Text = "Admin";
                 txtChucVu.Text = "Quản Lý";
+                pictureBox1.Show();
             }
             else
             {
@@ -30,5 +34,8 @@ namespace TTNhom
             InitializeComponent();
             init();
         }
+
+        
+
     }
 }
